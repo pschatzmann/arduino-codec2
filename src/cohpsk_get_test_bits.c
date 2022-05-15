@@ -7,6 +7,7 @@
   Generates a file of test bits, useful for input to cohpsk_mod.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 
 /*
@@ -84,4 +85,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+#endif
 

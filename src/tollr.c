@@ -5,6 +5,7 @@
 
   Converts oneBitPerByte hard decisions to LLRs for LDPC testing.
 */
+#ifndef ARDUINO
 
 #include <stdio.h>
 #include <stdint.h>
@@ -17,3 +18,5 @@ int main(void) {
     }
     return 0;
 }
+
+#endif

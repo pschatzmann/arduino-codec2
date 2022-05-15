@@ -9,7 +9,7 @@
   for algorithm development.
 
 \*---------------------------------------------------------------------------*/
-
+#ifndef ARDUINO
 /*
   Copyright (C) 2009 David Rowe
 
@@ -1166,3 +1166,5 @@ void print_help(const struct option* long_options, int num_opts, char* argv[])
 
 	exit(1);
 }
+
+#endif

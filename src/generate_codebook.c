@@ -8,6 +8,8 @@
 
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   All rights reserved.
 
@@ -58,7 +60,7 @@ dump_array(const struct codebook * b, int index)
   int	limit = b->k * b->m;
   int	i;
 
-  printf("#ifdef __EMBEDDED__\n");
+  printf("#if defined(__EMBEDDED__) || defined(ARDUINO)\n");
   printf("static const float codes%d[] = {\n", index);
   printf("#else\n");
   printf("static float codes%d[] = {\n", index);
@@ -185,3 +187,5 @@ main(int argc, char * * argv)
   free(cb);
   return 0;
 }
+
+#endif

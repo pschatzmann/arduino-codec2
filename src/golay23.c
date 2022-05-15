@@ -15,6 +15,8 @@
 
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   Copyright (C) 2016 Tomas Härdin & David Rowe
 
@@ -308,4 +310,5 @@ int main() {
     free(checkmask);
     return 0;
 }
+#endif
 #endif

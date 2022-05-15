@@ -27,6 +27,8 @@
   along with this program; if not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef ARDUINO
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -108,3 +110,5 @@ int main(int argc,char *argv[]){
     exit(0);
 }
 
+
+#endif

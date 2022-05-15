@@ -8,6 +8,7 @@
   compressed speech) using the FreeDV API.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2020 David Rowe
@@ -277,3 +278,5 @@ int main(int argc, char *argv[]) {
     if (foct) fclose(foct);
     return ret;
 }
+
+#endif

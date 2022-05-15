@@ -8,7 +8,7 @@
   of bits.
 
 \*---------------------------------------------------------------------------*/
-
+#ifndef ARDUINO
 /*
   Copyright (C) 2010 David Rowe
 
@@ -199,3 +199,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+#endif

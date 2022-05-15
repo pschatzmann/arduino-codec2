@@ -6,6 +6,7 @@
   Command line C LDPC decoder derived from MpDecode.c in the CML
   library.  Allows us to run the same decoder in Octave and C.
 */
+#ifndef ARDUINO
 
 #include <assert.h>
 #include <errno.h>
@@ -234,3 +235,4 @@ int main(int argc, char *argv[])
 }
 
 
+#endif

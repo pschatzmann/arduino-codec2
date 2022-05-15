@@ -19,7 +19,7 @@
 
 #include "debug_alloc.h"
 
-#ifdef __EMBEDDED__
+#if defined(__EMBEDDED__) || defined(ARDUINO)
 #include "machdep.h"
 #endif
 

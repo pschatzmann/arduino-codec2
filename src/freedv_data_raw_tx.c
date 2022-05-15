@@ -9,6 +9,8 @@
 
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   Copyright (C) 2020 David Rowe
 
@@ -433,3 +435,4 @@ void comp_to_short(short mod_out_short[], COMP mod_out_comp[], int n_mod_out) {
     }
 }
 
+#endif

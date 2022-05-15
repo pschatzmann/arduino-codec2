@@ -26,6 +26,7 @@
   You should have received a copy of the GNU Lesser General Public License
   along with this program; if not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef ARDUINO
 
 #include <stdio.h>
 #include <stdint.h>
@@ -103,3 +104,4 @@ int main(int argc,char *argv[]){
     exit(0);
 }
 
+#endif

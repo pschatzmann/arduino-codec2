@@ -12,6 +12,7 @@
     $ ./freedv_tx 1600 ../../raw/ve9qrp_10s.raw - | ./freedv_rx 1600 - - | aplay -f S16
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2014 David Rowe
@@ -346,3 +347,4 @@ int main(int argc, char *argv[]) {
     
     return 0;
 }
+#endif

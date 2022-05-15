@@ -8,6 +8,8 @@
    
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   Copyright (C) 2016 David Rowe
 
@@ -140,3 +142,5 @@ int main(int argc,char *argv[]){
     
     fsk_destroy(fsk);
 }
+
+#endif

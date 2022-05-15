@@ -43,7 +43,7 @@
 #include "debug_alloc.h"
 #include "machdep.h"
 
-#ifdef __EMBEDDED__
+#if defined(__EMBEDDED__) 
 #include "arm_math.h"
 #endif /* __EMBEDDED__ */
 
@@ -746,7 +746,7 @@ static int est_timing(struct OFDM *ofdm, complex float *rx, int length,
         corr_st = 0.0f;
         corr_en = 0.0f;
 
-#ifdef __EMBEDDED__
+#if defined(__EMBEDDED__) || defined(ARDUINO)
 #ifdef __REAL__
 	float re,im;
 

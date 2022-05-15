@@ -1062,6 +1062,9 @@ int freedv_get_version(void)
   Return the a string with the Git hash of the repo used to build this code.
 
 \*---------------------------------------------------------------------------*/
+#ifdef ARDUINO
+#define GIT_HASH "ARDUINO"
+#endif
 
 static char git_hash[] = GIT_HASH;
 char *freedv_get_hash(void)

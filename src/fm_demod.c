@@ -8,6 +8,7 @@
   11.1 kHz, outputs a file of demodulated audio samples.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2015 David Rowe
@@ -113,3 +114,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+#endif

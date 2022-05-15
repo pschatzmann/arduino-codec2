@@ -8,6 +8,8 @@
 
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   Copyright (C) 2020 Jeroen Vreeken
 
@@ -283,3 +285,4 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+#endif

@@ -8,6 +8,7 @@
   samples.  Runs in uncoded or LDPC coded modes.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2018 David Rowe
@@ -703,3 +704,5 @@ int main(int argc, char *argv[]) {
     
     return ret;
 }
+
+#endif

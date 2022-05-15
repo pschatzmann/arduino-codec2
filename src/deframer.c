@@ -7,6 +7,7 @@
   Command line deframer, obtains UW sync, then extracts frame of data bits.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2020 David Rowe
@@ -164,3 +165,5 @@ int main(int argc,char *argv[]){
 
     return 0;
 }
+
+#endif

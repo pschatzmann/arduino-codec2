@@ -6,6 +6,7 @@
   Add noise to LDPC soft decision samples for testing.  Simulates use
   of LDPC code with PSK modem.
 */
+#ifndef ARDUINO
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -75,3 +76,5 @@ int main(int argc, char *argv[]) {
  
     return 0;
 }
+
+#endif

@@ -8,6 +8,8 @@
 
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   Copyright (C) 2010 David Rowe
 
@@ -429,3 +431,5 @@ void print_help(const struct option* long_options, int num_opts, char* argv[])
 	}
 	exit(1);
 }
+
+#endif

@@ -23,6 +23,9 @@
 //
 //==========================================================================
 
+#ifndef ARDUINO
+
+
 #include <assert.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -512,4 +515,6 @@ int main(void) {
     test_varicode(2);
     return 0;
 }
+#endif
+
 #endif

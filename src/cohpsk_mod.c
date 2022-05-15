@@ -9,6 +9,7 @@
   ready to send over a HF radio channel.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2015 David Rowe
@@ -120,3 +121,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+#endif

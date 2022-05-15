@@ -8,6 +8,7 @@
   VHF packet data and speech frames.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2014 David Rowe
@@ -373,4 +374,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+#endif
 

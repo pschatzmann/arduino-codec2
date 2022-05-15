@@ -117,7 +117,7 @@ void freedv_ofdm_voice_open(struct freedv *f, char *mode) {
     assert(f->ldpc != NULL);
 
     ldpc_codes_setup(f->ldpc, f->ofdm->codename);
-#ifdef __EMBEDDED__
+#if defined(__EMBEDDED__) || defined(ARDUINO)
     f->ldpc->max_iter = 10; /* limit LDPC decoder iterations to limit CPU load */
 #endif
     int Nsymsperpacket = ofdm_get_bits_per_packet(f->ofdm) / f->ofdm->bps;
@@ -180,7 +180,7 @@ void freedv_ofdm_data_open(struct freedv *f) {
     f->ldpc = (struct LDPC*)MALLOC(sizeof(struct LDPC));
     assert(f->ldpc != NULL);
     ldpc_codes_setup(f->ldpc, f->ofdm->codename);
-#ifdef __EMBEDDED__
+#if defined(__EMBEDDED__) || defined(ARDUINO)
     f->ldpc->max_iter = 10; /* limit LDPC decoder iterations to limit CPU load */
 #endif
 

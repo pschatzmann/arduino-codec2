@@ -8,6 +8,7 @@
   outputs a file of bits (note one bit per int, not compressed).
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2015 David Rowe
@@ -256,3 +257,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+#endif

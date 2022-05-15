@@ -8,6 +8,7 @@
 
   building: gcc ldpc_enc.c -o ldpc_enc -Wall -g
 */
+#ifndef ARDUINO
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -159,3 +160,5 @@ int main(int argc, char *argv[])
 
     return 1;
 }
+
+#endif

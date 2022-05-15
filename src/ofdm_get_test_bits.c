@@ -8,6 +8,8 @@
 
 \*---------------------------------------------------------------------------*/
 
+#ifndef ARDUINO
+
 /*
   Copyright (C) 2018 David Rowe
 
@@ -159,3 +161,4 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+#endif

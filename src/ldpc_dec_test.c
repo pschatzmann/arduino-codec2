@@ -22,7 +22,7 @@
   not converge and hit max_iters.
 
 */
-
+#ifndef ARDUINO
 #include <assert.h>
 #include <errno.h>
 #include <math.h>
@@ -352,5 +352,5 @@ int main(int argc, char *argv[])
     
     return 0;
 }
-
+#endif
 

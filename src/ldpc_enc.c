@@ -6,6 +6,7 @@
   RA LDPC encoder program. Using the elegant back substitution of RA
   LDPC codes.
 */
+#ifndef ARDUINO
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -144,3 +145,5 @@ int main(int argc, char *argv[])
 
     return 1;
 }
+
+#endif

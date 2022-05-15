@@ -29,7 +29,9 @@
 #ifndef __CODEC2__
 #define  __CODEC2__
 
+#ifndef ARDUINO
 #include <codec2/version.h>
+#endif
 
 #ifdef __cplusplus
   extern "C" {

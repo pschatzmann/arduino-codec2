@@ -8,6 +8,7 @@
   samples, adds channel impairments and outputs to another raw file.
 
 \*---------------------------------------------------------------------------*/
+#ifndef ARDUINO
 
 /*
   Copyright (C) 2014 David Rowe
@@ -100,4 +101,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+#endif
 

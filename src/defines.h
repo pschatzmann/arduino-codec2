@@ -94,7 +94,7 @@ struct lsp_codebook {
     int			k;        /* dimension of vector	*/
     int			log2m;    /* number of bits in m	*/
     int			m;        /* elements in codebook	*/
-#ifdef __EMBEDDED__               /* make sure stored in flash  */
+#if defined(__EMBEDDED__) || defined(ARDUINO)               /* make sure stored in flash  */
   const float        *cb;	  /* The elements		*/
 #else
   float              *cb;	  /* The elements		*/
