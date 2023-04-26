@@ -1197,7 +1197,7 @@ static void burst_acquisition_detector(struct OFDM *ofdm,
 static int ofdm_sync_search_burst(struct OFDM *ofdm) {
     
     int st = ofdm->rxbufst + ofdm->m + ofdm->ncp + ofdm->samplesperframe;
-    char *pre_post = "";
+    const char *pre_post = "";
     
     int pre_ct_est; float pre_foff_est, pre_timing_mx;        
     burst_acquisition_detector(ofdm, ofdm->rxbuf, st, (complex float*)ofdm->tx_preamble, 
@@ -2415,12 +2415,12 @@ void ofdm_generate_preamble(struct OFDM *ofdm, COMP *tx_preamble, int seed) {
 }
 
 void ofdm_print_info(struct OFDM *ofdm) {
-    char *syncmode[] = {
+    const char *syncmode[] = {
         "unsync",
         "autosync",
         "manualsync"
     };
-    char *phase_est_bandwidth_mode[] = {
+    const char *phase_est_bandwidth_mode[] = {
         "auto",
         "locked_high"
     };

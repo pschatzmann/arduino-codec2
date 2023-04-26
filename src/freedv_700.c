@@ -35,7 +35,7 @@
 #include "debug_alloc.h"
 #include "filter.h"
 
-extern char *ofdm_statemode[];
+extern const char *ofdm_statemode[];
 
 void freedv_700c_open(struct freedv *f) {
     f->snr_squelch_thresh = 0.0;
@@ -96,7 +96,7 @@ void freedv_comptx_700c(struct freedv *f, COMP mod_out[]) {
 }
 
 // open function for OFDM voice modes
-void freedv_ofdm_voice_open(struct freedv *f, char *mode) {
+void freedv_ofdm_voice_open(struct freedv *f, const char *mode) {
     f->snr_squelch_thresh = 0.0;
     f->squelch_en = 0;
     struct OFDM_CONFIG *ofdm_config = (struct OFDM_CONFIG *) calloc(1, sizeof (struct OFDM_CONFIG));

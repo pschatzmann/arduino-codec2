@@ -56,7 +56,7 @@
 // identifiers for non Codec 2 Speech codecs, make sure no overlap with CODEC2_XXX modes
 #define CODEC_MODE_LPCNET_1733 100
 
-extern char *rx_sync_flags_to_text[]; // converts flags above to more meaningful text
+extern const char *rx_sync_flags_to_text[]; // converts flags above to more meaningful text
 
 struct freedv {
     int                  mode;
@@ -196,7 +196,7 @@ struct freedv {
 
 void freedv_1600_open(struct freedv *f);
 void freedv_700c_open(struct freedv *f);
-void freedv_ofdm_voice_open(struct freedv *f, char *mode);
+void freedv_ofdm_voice_open(struct freedv *f, const char *mode);
 void freedv_2020x_open(struct freedv *f, int vq_type);
 void freedv_2400a_open(struct freedv *f);
 void freedv_2400b_open(struct freedv *f);

@@ -13,7 +13,7 @@
 #include "codec2_ofdm.h"
 #include "ofdm_internal.h"
 
-void ofdm_init_mode(char mode[], struct OFDM_CONFIG *config) {
+void ofdm_init_mode(const char mode[], struct OFDM_CONFIG *config) {
     assert(mode != NULL);
     assert(config != NULL);
 

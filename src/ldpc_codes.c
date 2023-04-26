@@ -216,7 +216,7 @@ void ldpc_codes_list() {
     fprintf(stderr, "\n");
 }
 
-int ldpc_codes_find(char name[]) {
+int ldpc_codes_find(const char name[]) {
     int code_index = -1;
     for(int c=0; c<ldpc_codes_num(); c++)
         if (strcmp(ldpc_codes[c].name, name) == 0)
@@ -225,7 +225,7 @@ int ldpc_codes_find(char name[]) {
     return code_index;
 }
 
-void ldpc_codes_setup(struct LDPC *ldpc, char name[]) {
+void ldpc_codes_setup(struct LDPC *ldpc, const char name[]) {
     int code_index;
     code_index = ldpc_codes_find(name);
     assert(code_index != -1);
