@@ -746,7 +746,7 @@ static int est_timing(struct OFDM *ofdm, complex float *rx, int length,
         corr_st = 0.0f;
         corr_en = 0.0f;
 
-#if defined(__EMBEDDED__) || defined(ARDUINO)
+#if defined(__EMBEDDED__) 
 #ifdef __REAL__
 	float re,im;
 
