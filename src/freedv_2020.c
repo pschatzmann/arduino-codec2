@@ -33,7 +33,7 @@
 #include "interldpc.h"
 #include "debug_alloc.h"
 
-extern char *ofdm_statemode[];
+extern const char *ofdm_statemode[];
 
 #ifdef __LPCNET__
 void freedv_2020x_open(struct freedv *f, int vq_type) {

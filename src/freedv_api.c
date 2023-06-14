@@ -75,9 +75,9 @@
  *              buffers.
  */
 
-char *ofdm_statemode[] = {"search","trial","synced"};
+const char *ofdm_statemode[] = {"search","trial","synced"};
 
-char *rx_sync_flags_to_text[] = {
+const char *rx_sync_flags_to_text[] = {
     "----",
     "---T",
     "--S-",
@@ -1067,7 +1067,7 @@ int freedv_get_version(void)
 #endif
 
 static char git_hash[] = GIT_HASH;
-char *freedv_get_hash(void)
+const char *freedv_get_hash(void)
 {
     return git_hash;
 }

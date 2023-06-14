@@ -101,7 +101,7 @@ static inline void modem_probe_samp_cft(char *tracename,complex float samp[],siz
 
 #else
 
-static inline void modem_probe_init(char *modname,char *runname){
+static inline void modem_probe_init(const char *modname,char *runname){
         return;
 }
 
@@ -109,19 +109,19 @@ static inline void modem_probe_close(){
         return;
 }
 
-static inline void modem_probe_samp_i(char *name,int samp[],size_t sampcnt){
+static inline void modem_probe_samp_i(const char *name,int samp[],size_t sampcnt){
         return;
 }
 
-static inline void modem_probe_samp_f(char *name,float samp[],size_t cnt){
+static inline void modem_probe_samp_f(const char *name,float samp[],size_t cnt){
         return;
 }
 
-static inline void modem_probe_samp_c(char *name,COMP samp[],size_t cnt){
+static inline void modem_probe_samp_c(const char *name,COMP samp[],size_t cnt){
         return;
 }
 
-static inline void modem_probe_samp_cft(char *name,complex float samp[],size_t cnt){
+static inline void modem_probe_samp_cft(const char *name,complex float samp[],size_t cnt){
         return;
 }
 

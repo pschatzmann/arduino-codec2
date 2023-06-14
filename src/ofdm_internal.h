@@ -94,8 +94,8 @@ struct OFDM_CONFIG {
     int bad_uw_errors;
     int ftwindowwidth;
     int edge_pilots;
-    char *state_machine;  /* name of sync state machine used for this mode */
-    char *codename;       /* name of LDPC code used with this mode */
+    const char *state_machine;  /* name of sync state machine used for this mode */
+    const char *codename;       /* name of LDPC code used with this mode */
     uint8_t tx_uw[MAX_UW_BITS]; /* user defined unique word */
     int amp_est_mode;
     bool tx_bpf_en;       /* default clippedtx BPF state */
@@ -105,7 +105,7 @@ struct OFDM_CONFIG {
     float clip_gain2;     /* gain we apply to Tx signal after clipping and BBF to control peak level */
     bool  clip_en;
     char mode[16];        /* OFDM mode in string form */
-    char *data_mode;
+    const char *data_mode;
     float fmin;
     float fmax;
 };
@@ -148,7 +148,7 @@ struct OFDM {
     int bad_uw_errors;    /* threshold for UW detection check */
     int uw_fails;         /* number of times we exceeded bad_uw_errors and dropped sync */
     int edge_pilots;      /* insert pilots at 1 and Nc+2, to support low bandwidth phase est */
-    char *data_mode;      /* "", "streaming", "burst"  */
+    const char *data_mode;      /* "", "streaming", "burst"  */
     int packetsperburst;  /* for OFDM data modes, how many packets before we reset state machine */
     int amp_est_mode;     /* amplitude estimtor algorithm */
     float amp_scale;
@@ -239,8 +239,8 @@ struct OFDM {
     bool dpsk_en;
     bool postambledetectoren; /* allows us to optionally disable the postamble detector */
     
-    char *codename;
-    char *state_machine;
+    const char *codename;
+    const char *state_machine;
 };
 
 /* Prototypes */

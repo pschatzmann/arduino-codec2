@@ -145,7 +145,7 @@ struct freedv_advanced {
     int Fs;                                  // Sample rate Hz
     int first_tone;                          // Freq of first tone Hz
     int tone_spacing;                        // Spacing between tones Hz
-    char *codename;                          // LDPC codename, from codes listed in ldpc_codes.c
+    const char*codename;                          // LDPC codename, from codes listed in ldpc_codes.c
 };
 
 // Called when text message char is decoded
@@ -157,15 +157,15 @@ typedef void (*freedv_calback_error_pattern)
 
 // Protocol bits are packed MSB-first
 // Called when a frame containing protocol data is decoded
-typedef void (*freedv_callback_protorx)(void *, char *);
+typedef void (*freedv_callback_protorx)(void *, char*);
 // Called when a frame containing protocol data is to be sent
-typedef void (*freedv_callback_prototx)(void *, char *);
+typedef void (*freedv_callback_prototx)(void *, char*);
 
 // Data packet callbacks
 // Called when a packet has been received
-typedef void (*freedv_callback_datarx)(void *, unsigned char *packet, size_t size);
+typedef void (*freedv_callback_datarx)(void *, unsigned  char*packet, size_t size);
 // Called when a new packet can be send
-typedef void (*freedv_callback_datatx)(void *, unsigned char *packet, size_t *size);
+typedef void (*freedv_callback_datatx)(void *, unsigned  char*packet, size_t *size);
 
 
 /*---------------------------------------------------------------------------*\
@@ -186,8 +186,8 @@ void freedv_tx             (struct freedv *freedv, short mod_out[], short speech
 void freedv_comptx         (struct freedv *freedv, COMP  mod_out[], short speech_in[]);
 void freedv_datatx         (struct freedv *f, short mod_out[]);
 int  freedv_data_ntxframes (struct freedv *freedv);
-void freedv_rawdatatx      (struct freedv *f, short mod_out[], unsigned char *packed_payload_bits);
-void freedv_rawdatacomptx  (struct freedv *f, COMP mod_out[], unsigned char *packed_payload_bits);
+void freedv_rawdatatx      (struct freedv *f, short mod_out[], unsigned  char*packed_payload_bits);
+void freedv_rawdatacomptx  (struct freedv *f, COMP mod_out[], unsigned  char*packed_payload_bits);
 int  freedv_rawdatapreambletx      (struct freedv *f, short mod_out[]);
 int  freedv_rawdatapreamblecomptx  (struct freedv *f, COMP mod_out[]);
 int  freedv_rawdatapostambletx      (struct freedv *f, short mod_out[]);
@@ -200,18 +200,18 @@ int freedv_rx            (struct freedv *freedv, short speech_out[], short demod
 int freedv_shortrx       (struct freedv *freedv, short speech_out[], short demod_in[], float gain);
 int freedv_floatrx       (struct freedv *freedv, short speech_out[], float demod_in[]);
 int freedv_comprx        (struct freedv *freedv, short speech_out[], COMP  demod_in[]);
-int freedv_rawdatarx     (struct freedv *freedv, unsigned char *packed_payload_bits, short demod_in[]);
-int freedv_rawdatacomprx (struct freedv *freedv, unsigned char *packed_payload_bits, COMP demod_in[]);
+int freedv_rawdatarx     (struct freedv *freedv, unsigned  char*packed_payload_bits, short demod_in[]);
+int freedv_rawdatacomprx (struct freedv *freedv, unsigned  char*packed_payload_bits, COMP demod_in[]);
 
 // Helper functions -------------------------------------------------------------------
 
-int freedv_codec_frames_from_rawdata(struct freedv *freedv, unsigned char *codec_frames, unsigned char *rawdata);
-int freedv_rawdata_from_codec_frames(struct freedv *freedv, unsigned char *rawdata, unsigned char *codec_frames);
+int freedv_codec_frames_from_rawdata(struct freedv *freedv, unsigned  char*codec_frames, unsigned  char*rawdata);
+int freedv_rawdata_from_codec_frames(struct freedv *freedv, unsigned  char*rawdata, unsigned  char*codec_frames);
 unsigned short freedv_gen_crc16(unsigned char* bytes, int nbytes);
-void freedv_pack(unsigned char *bytes, unsigned char *bits, int nbits);
-void freedv_unpack(unsigned char *bits, unsigned char *bytes, int nbits);
-unsigned short freedv_crc16_unpacked(unsigned char *bits, int nbits);
-int freedv_check_crc16_unpacked(unsigned char *unpacked_bits, int nbits);
+void freedv_pack(unsigned  char*bytes, unsigned  char*bits, int nbits);
+void freedv_unpack(unsigned  char*bits, unsigned  char*bytes, int nbits);
+unsigned short freedv_crc16_unpacked(unsigned  char*bits, int nbits);
+int freedv_check_crc16_unpacked(unsigned  char*unpacked_bits, int nbits);
 
 // Set parameters ------------------------------------------------------------
 
@@ -232,7 +232,7 @@ void freedv_set_total_packets           (struct freedv *freedv, int val);
 void freedv_set_total_packet_errors     (struct freedv *freedv, int val);
 void freedv_set_callback_error_pattern  (struct freedv *freedv, freedv_calback_error_pattern cb, void *state);
 void freedv_set_varicode_code_num       (struct freedv *freedv, int val);
-void freedv_set_data_header             (struct freedv *freedv, unsigned char *header);
+void freedv_set_data_header             (struct freedv *freedv, unsigned  char*header);
 void freedv_set_carrier_ampl            (struct freedv *freedv, int c, float ampl);
 void freedv_set_sync                    (struct freedv *freedv, int sync_cmd);
 void freedv_set_verbose                 (struct freedv *freedv, int verbosity);
@@ -251,7 +251,7 @@ int freedv_set_tuning_range             (struct freedv *freedv, float val_fmin, 
 struct MODEM_STATS;
 
 int freedv_get_version(void);
-char *freedv_get_hash(void);
+const char*freedv_get_hash(void);
 int freedv_get_mode                 (struct freedv *freedv);
 void freedv_get_modem_stats         (struct freedv *freedv, int *sync, float *snr_est);
 void freedv_get_modem_extended_stats(struct freedv *freedv, struct MODEM_STATS *stats);
