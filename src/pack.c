@@ -89,7 +89,7 @@ pack_natural_or_gray(
  *
  */
 int
-unpack(
+codec2_unpack(
  const unsigned char *	bitArray, /* The input bit string. */
  unsigned int *		bitIndex, /* Index into the string in BITS, not bytes.*/
  unsigned int		fieldWidth/* Width of the field in BITS, not bytes. */

@@ -139,13 +139,13 @@ int test2()
 	pack((unsigned char*)bits, (unsigned *)&nbit, voiced2, 1);
 
 	nbit = 0;
-	Wo_index = unpack((unsigned char*)bits, (unsigned *)&nbit, WO_BITS);
+	Wo_index =codec2_unpack((unsigned char*)bits, (unsigned *)&nbit, WO_BITS);
 	for(i=0; i<LPC_ORD; i++) {
-	    lsp_indexes[i] = unpack((unsigned char*)bits, (unsigned *)&nbit, lsp_bits(i));
+	    lsp_indexes[i] =codec2_unpack((unsigned char*)bits, (unsigned *)&nbit, lsp_bits(i));
 	}
-	energy_index = unpack((unsigned char*)bits, (unsigned *)&nbit, E_BITS);
-	voiced1 = unpack((unsigned char*)bits, (unsigned *)&nbit, 1);
-	voiced2 = unpack((unsigned char*)bits, (unsigned *)&nbit, 1);
+	energy_index =codec2_unpack((unsigned char*)bits, (unsigned *)&nbit, E_BITS);
+	voiced1 =codec2_unpack((unsigned char*)bits, (unsigned *)&nbit, 1);
+	voiced2 =codec2_unpack((unsigned char*)bits, (unsigned *)&nbit, 1);
 
 	model.Wo = decode_Wo(Wo_index);
 	model.L = PI/model.Wo;

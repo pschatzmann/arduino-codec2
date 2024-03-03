@@ -602,18 +602,18 @@ void codec2_decode_3200(struct CODEC2 *c2, short speech[], const unsigned char *
     /* this will partially fill the model params for the 2 x 10ms
        frames */
 
-    model[0].voiced = unpack(bits, &nbit, 1);
-    model[1].voiced = unpack(bits, &nbit, 1);
+    model[0].voiced =codec2_unpack(bits, &nbit, 1);
+    model[1].voiced =codec2_unpack(bits, &nbit, 1);
 
-    Wo_index = unpack(bits, &nbit, WO_BITS);
+    Wo_index =codec2_unpack(bits, &nbit, WO_BITS);
     model[1].Wo = decode_Wo(&c2->c2const, Wo_index, WO_BITS);
     model[1].L  = PI/model[1].Wo;
 
-    e_index = unpack(bits, &nbit, E_BITS);
+    e_index =codec2_unpack(bits, &nbit, E_BITS);
     e[1] = decode_energy(e_index, E_BITS);
 
     for(i=0; i<LSPD_SCALAR_INDEXES; i++) {
-	lspd_indexes[i] = unpack(bits, &nbit, lspd_bits(i));
+	lspd_indexes[i] =codec2_unpack(bits, &nbit, lspd_bits(i));
     }
     decode_lspds_scalar(&lsps[1][0], lspd_indexes, LPC_ORD);
 
@@ -748,14 +748,14 @@ void codec2_decode_2400(struct CODEC2 *c2, short speech[], const unsigned char *
     /* this will partially fill the model params for the 2 x 10ms
        frames */
 
-    model[0].voiced = unpack(bits, &nbit, 1);
+    model[0].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[1].voiced = unpack(bits, &nbit, 1);
-    WoE_index = unpack(bits, &nbit, WO_E_BITS);
+    model[1].voiced =codec2_unpack(bits, &nbit, 1);
+    WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
     decode_WoE(&c2->c2const, &model[1], &e[1], c2->xq_dec, WoE_index);
 
     for(i=0; i<LSP_SCALAR_INDEXES; i++) {
-	lsp_indexes[i] = unpack(bits, &nbit, lsp_bits(i));
+	lsp_indexes[i] =codec2_unpack(bits, &nbit, lsp_bits(i));
     }
     decode_lsps_scalar(&lsps[1][0], lsp_indexes, LPC_ORD);
     check_lsp_order(&lsps[1][0], LPC_ORD);
@@ -926,28 +926,28 @@ void codec2_decode_1600(struct CODEC2 *c2, short speech[], const unsigned char *
     /* this will partially fill the model params for the 4 x 10ms
        frames */
 
-    model[0].voiced = unpack(bits, &nbit, 1);
+    model[0].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[1].voiced = unpack(bits, &nbit, 1);
-    Wo_index = unpack(bits, &nbit, WO_BITS);
+    model[1].voiced =codec2_unpack(bits, &nbit, 1);
+    Wo_index =codec2_unpack(bits, &nbit, WO_BITS);
     model[1].Wo = decode_Wo(&c2->c2const, Wo_index, WO_BITS);
     model[1].L  = PI/model[1].Wo;
 
-    e_index = unpack(bits, &nbit, E_BITS);
+    e_index =codec2_unpack(bits, &nbit, E_BITS);
     e[1] = decode_energy(e_index, E_BITS);
 
-    model[2].voiced = unpack(bits, &nbit, 1);
+    model[2].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[3].voiced = unpack(bits, &nbit, 1);
-    Wo_index = unpack(bits, &nbit, WO_BITS);
+    model[3].voiced =codec2_unpack(bits, &nbit, 1);
+    Wo_index =codec2_unpack(bits, &nbit, WO_BITS);
     model[3].Wo = decode_Wo(&c2->c2const, Wo_index, WO_BITS);
     model[3].L  = PI/model[3].Wo;
 
-    e_index = unpack(bits, &nbit, E_BITS);
+    e_index =codec2_unpack(bits, &nbit, E_BITS);
     e[3] = decode_energy(e_index, E_BITS);
 
     for(i=0; i<LSP_SCALAR_INDEXES; i++) {
-	lsp_indexes[i] = unpack(bits, &nbit, lsp_bits(i));
+	lsp_indexes[i] =codec2_unpack(bits, &nbit, lsp_bits(i));
     }
     decode_lsps_scalar(&lsps[3][0], lsp_indexes, LPC_ORD);
     check_lsp_order(&lsps[3][0], LPC_ORD);
@@ -1104,20 +1104,20 @@ void codec2_decode_1400(struct CODEC2 *c2, short speech[], const unsigned char *
     /* this will partially fill the model params for the 4 x 10ms
        frames */
 
-    model[0].voiced = unpack(bits, &nbit, 1);
+    model[0].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[1].voiced = unpack(bits, &nbit, 1);
-    WoE_index = unpack(bits, &nbit, WO_E_BITS);
+    model[1].voiced =codec2_unpack(bits, &nbit, 1);
+    WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
     decode_WoE(&c2->c2const, &model[1], &e[1], c2->xq_dec, WoE_index);
 
-    model[2].voiced = unpack(bits, &nbit, 1);
+    model[2].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[3].voiced = unpack(bits, &nbit, 1);
-    WoE_index = unpack(bits, &nbit, WO_E_BITS);
+    model[3].voiced =codec2_unpack(bits, &nbit, 1);
+    WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
     decode_WoE(&c2->c2const, &model[3], &e[3], c2->xq_dec, WoE_index);
 
     for(i=0; i<LSP_SCALAR_INDEXES; i++) {
-	lsp_indexes[i] = unpack(bits, &nbit, lsp_bits(i));
+	lsp_indexes[i] =codec2_unpack(bits, &nbit, lsp_bits(i));
     }
     decode_lsps_scalar(&lsps[3][0], lsp_indexes, LPC_ORD);
     check_lsp_order(&lsps[3][0], LPC_ORD);
@@ -1468,20 +1468,20 @@ void codec2_decode_1200(struct CODEC2 *c2, short speech[], const unsigned char *
     /* this will partially fill the model params for the 4 x 10ms
        frames */
 
-    model[0].voiced = unpack(bits, &nbit, 1);
+    model[0].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[1].voiced = unpack(bits, &nbit, 1);
-    WoE_index = unpack(bits, &nbit, WO_E_BITS);
+    model[1].voiced =codec2_unpack(bits, &nbit, 1);
+    WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
     decode_WoE(&c2->c2const, &model[1], &e[1], c2->xq_dec, WoE_index);
 
-    model[2].voiced = unpack(bits, &nbit, 1);
+    model[2].voiced =codec2_unpack(bits, &nbit, 1);
 
-    model[3].voiced = unpack(bits, &nbit, 1);
-    WoE_index = unpack(bits, &nbit, WO_E_BITS);
+    model[3].voiced =codec2_unpack(bits, &nbit, 1);
+    WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
     decode_WoE(&c2->c2const, &model[3], &e[3], c2->xq_dec, WoE_index);
 
     for(i=0; i<LSP_PRED_VQ_INDEXES; i++) {
-	lsp_indexes[i] = unpack(bits, &nbit, lsp_pred_vq_bits(i));
+	lsp_indexes[i] =codec2_unpack(bits, &nbit, lsp_pred_vq_bits(i));
     }
     decode_lsps_vq(lsp_indexes, &lsps[3][0], LPC_ORD , 0);
     check_lsp_order(&lsps[3][0], LPC_ORD);
@@ -1757,22 +1757,22 @@ float codec2_get_energy(struct CODEC2 *c2, const unsigned char *bits)
 
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_3200, c2->mode)) {
         nbit = 1 + 1 + WO_BITS;
-	e_index = unpack(bits, &nbit, E_BITS);
+	e_index =codec2_unpack(bits, &nbit, E_BITS);
         e = decode_energy(e_index, E_BITS);
     }
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_2400, c2->mode)) {
         nbit = 1 + 1;
-        WoE_index = unpack(bits, &nbit, WO_E_BITS);
+        WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
         decode_WoE(&c2->c2const, &model, &e, xq_dec, WoE_index);
     }
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_1600, c2->mode)) {
         nbit = 1 + 1 + WO_BITS;
-        e_index = unpack(bits, &nbit, E_BITS);
+        e_index =codec2_unpack(bits, &nbit, E_BITS);
         e = decode_energy(e_index, E_BITS);
     }
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_1400, c2->mode)) {
         nbit = 1 + 1;
-        WoE_index = unpack(bits, &nbit, WO_E_BITS);
+        WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
         decode_WoE(&c2->c2const, &model, &e, xq_dec, WoE_index);
     }
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_1300, c2->mode)) {
@@ -1782,7 +1782,7 @@ float codec2_get_energy(struct CODEC2 *c2, const unsigned char *bits)
     }
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_1200, c2->mode)) {
         nbit = 1 + 1;
-        WoE_index = unpack(bits, &nbit, WO_E_BITS);
+        WoE_index =codec2_unpack(bits, &nbit, WO_E_BITS);
         decode_WoE(&c2->c2const, &model, &e, xq_dec, WoE_index);
     }
     if ( CODEC2_MODE_ACTIVE(CODEC2_MODE_700C, c2->mode)) {

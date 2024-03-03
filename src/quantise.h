@@ -78,7 +78,7 @@ float decode_energy(int index, int bits);
 
 void pack(unsigned char * bits, unsigned int *nbit, int index, unsigned int index_bits);
 void pack_natural_or_gray(unsigned char * bits, unsigned int *nbit, int index, unsigned int index_bits, unsigned int gray);
-int  unpack(const unsigned char * bits, unsigned int *nbit, unsigned int index_bits);
+int  codec2_unpack(const unsigned char * bits, unsigned int *nbit, unsigned int index_bits);
 int  unpack_natural_or_gray(const unsigned char * bits, unsigned int *nbit, unsigned int index_bits, unsigned int gray);
 
 int lsp_bits(int i);
