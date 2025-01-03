@@ -28,7 +28,11 @@
 #ifndef OFDM_INTERNAL_H
 #define OFDM_INTERNAL_H
 
-#include <complex.h>
+#ifdef ESP32
+#  include <esp32-fix/complex.h>
+#else
+#  include <complex.h>
+#endif
 #include <stdbool.h>
 #include <stdint.h>
 

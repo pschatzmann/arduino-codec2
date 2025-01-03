@@ -18,7 +18,11 @@
 #ifndef __FILTER__
 #define __FILTER__
 
-#include <complex.h>
+#ifdef ESP32
+#  include <esp32-fix/complex.h>
+#else
+#  include <complex.h>
+#endif
 
 struct quisk_cfFilter {        // Structure to hold the static data for FIR filters
     float * dCoefs;            // real filter coefficients

@@ -33,7 +33,11 @@
 #include <string.h>
 #include <math.h>
 #include <assert.h>
-#include <complex.h>
+#ifdef ESP32
+#  include <esp32-fix/complex.h>
+#else
+#  include <complex.h>
+#endif
 
 #include "comp.h"
 #include "ofdm_internal.h"

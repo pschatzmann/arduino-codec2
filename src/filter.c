@@ -18,8 +18,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <complex.h>
-
+#ifdef ESP32
+#  include <esp32-fix/complex.h>
+#else
+#  include <complex.h>
+#endif
 #include "filter.h"
 #include "filter_coef.h"
 #include "debug_alloc.h"

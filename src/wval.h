@@ -12,7 +12,11 @@
  *   }
  *
  */
-#include <complex.h>
+#ifdef ESP32
+#  include <esp32-fix/complex.h>
+#else
+#  include <complex.h>
+#endif
 
 static const complex float ofdm_wval[] = {
 1.000000-0.000000 * I,
